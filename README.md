@@ -1,5 +1,5 @@
 # SAMTS-Website
-The open source code to my public website, available at samts.us
+The open source code to my public website, available at https://samts.us
 
 ## Self Hosting
 Want to host my website on your server? Follow these steps:
