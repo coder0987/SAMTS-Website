@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Barrier Jumper | SAM Testing Site</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="/script.js"></script>
+    <script src="./ai.js"></script>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./ai.css">
+</head>
+<body class="darkTheme" id="body">
+    <div class="container">
+        <div class="row">
+            <header class="d-flex justify-content-center py-3">
+            <ul class="nav">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/games/" class="nav-link active" aria-current="page">Games</a></li>
+                <li class="nav-item"><a href="/other" class="nav-link">Other</a></li>
+            </ul>
+            </header>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md">
+                <canvas id="canvas" width=400 height=400 style="border:1px solid #000000;"></canvas><br>
+            </div>
+            <div class="col-xs-12 col-md left-align">
+                <label for="timeout">Max time Per Round:</label>
+                <input type="number" min="5" max="600" value="50" onChange="timeout=this.value*1000"><br>
+                <label for="barDis">Distance Between Barriers:</label>
+                <input type="number" min="0" max="1000" value="100" onChange="distanceBetweenBarriers=this.value"><br>
+                <label for="base">Base Speed:</label>
+                <input type="number" min="0" max="50" value="1" onChange="baseSpeed=this.value"><br>
+                <label for="increase">Speed Increase:</label>
+                <input type="number" min="-1" max="50" value="0.1" onChange="speedAdjustmentsPerBarrier=this.value"><br>
+                <label for="max">Max Speed:</label>
+                <input type="number" min="0" max="50" value="5" onChange="maxSpeed=this.value"><br>
+                <label for="height">Barrier Height:</label>
+                <input type="number" min="1" max="150" value="60" onChange="barrierHeight=this.value"><br>
+                <label for="popSize">Population Size:</label>
+                <input type="number" min="1" max="1500" value="50" onChange="populationSize=this.value;tp()"><br>
+                <label for="width">Neural Net Width:</label>
+                <input type="number" min="3" max="1500" value="20" onChange="aiWidth=this.value;tp()"><br>
+                <label for="height">Neural Net Height:</label>
+                <input type="number" min="1" max="1500" value="50" onChange="aiHeight=this.value;tp()"><br>
+                <p id="tp"></p>
+                <label for="muteRate">Mutation Rate:</label>
+                <input type="number" min="0" max="10" value="0.1" onChange="mutationRate=this.value"><br>
+                <label for="crazyMute">Crazy Mutation Chance:</label>
+                <input type="number" min="0" max="100" value="0.1" onChange="crazyMutationChance=this.value/100"><br>
+                <button onclick="endRound()">Next Gen</button><span>  </span>
+                <button onclick="resetPopulation()">Reset Population</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md">
+                <button onclick="fullscreen()">Fullscreen</button>
+            </div>
+            <div class="col-xs-12 col-md left-align">
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>

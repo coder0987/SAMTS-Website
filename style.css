@@ -1,0 +1,155 @@
+:root {
+    --gold: #ebb866;
+    --black: #2d2d2b;
+    --black-hover: rgb(0,0,0);
+    --white: #f7f9f8;
+    --green: #006e00;
+    --light-green: #446e44;
+    --gold-hover: rgb(235,200,0);
+
+    --header: var(--black);
+    --header-text: var(--gold);
+    --background: var(--black);
+    --text: var(--green);
+    --link: var(--gold);
+    --link-hover: var(--gold-hover);
+
+    --light-link: rgb(255,255,255);
+    --light-link-hover: rgb(200,200,200);
+
+    --background-light: var(--white);
+    --text-light: var(--black);
+}
+
+.darkTheme {
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+    color: var(--light-green);
+}
+html, body {
+    text-align: center;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans';
+    font-weight: light;
+}
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+a {
+    color: var(--link);
+}
+a:hover {
+    color: var(--link-hover);
+}
+.siteLink {
+    position: absolute;
+    color: var(--link);
+    text-decoration: none;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.siteLink:hover {
+    color: var(--link-hover);
+}
+.theme {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    height: 20px;
+    padding: 0px 0px 10px 10px;
+    margin: 0px 0px 10px 10px;
+    background-color: var(--header);
+    border: none;
+    text-align: center;
+}
+.pageLink {
+    color: var(--link);
+}
+.pageLink:hover {
+    color: var(--link-hover);
+}
+a {
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 300;
+    margin-top: 10px; 
+}
+h1 {
+    position: absolute;
+    top: 0px;
+    color: var(--header-text);
+    font-family: 'Nunito', Courier, monospace;
+    text-align: center;
+    word-spacing: normal;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 0px;
+    color: var(--text);
+}
+h2 {
+    font-family: 'Nunito';
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--text);
+}
+h3 {
+    font-family: 'Nunito', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--text);
+}
+.list {
+    text-decoration: none;
+    color: var(--light-link);
+    font-size: 18px;
+}
+.list:hover {
+    text-decoration: none;
+    color: var(--light-link-hover);
+}
+.black-text {
+    color: var(--black-hover);
+}
+@media (min-width: @screen-md-min) {
+    .header {
+        padding-bottom: 40px;
+    }
+    .secondary-background {
+        background-color: var(--black);
+    }
+}
+.small-link {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.left-align {
+    text-align: left;
+}
+.center-align {
+    text-align: center;
+}
+.nav-link {
+    color: var(--header-text);
+}
+.active {
+    background-color: var(--header);
+    border-radius: 15px;
+}
+input {
+    color: black;
+    width: 100px;
+}

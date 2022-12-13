@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+	<channel>
+		<title>SAM Testing Site</title>
+		<link>https://samts.us/</link>
+		<description>Updates and changes to my website, SAMTS</description>
+		<item>
+			<title>Website Redesign - Mobile Friendly + New Favicon</title>
+			<link>https://samts.us</link>
+			<guild>https://samts.us</guild>
+			<pubDate>Tue,20 Aug 2022 20:28:00 CST</pubDate>
+			<description>SamTS just got a little more mobile friendly and a lot better looking with this new total web redesign. Plus, light theme now carries over between pages and a cool new favicon has arrived.</description>
+		</item>
+		<item>
+			<title>Quoridor - A Strategy Game for 2 or 4 Players</title>
+			<link>https://samts.us/games/quoridor/</link>
+			<guid>https://samts.us/games/quoridor/</guid>
+			<pubDate>Wed,06 Jul 2022 20:15:40 CST</pubDate>
+			<description>Today I released a new game available to play on my website: Quoridor. Quoridor is a simple turn-based strategy game involving 2 or 4 players, a 9x9 board, and 20 walls. Check it out! </description>
+		</item>
+	</channel>
+</rss>

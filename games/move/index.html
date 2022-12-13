@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move | SAM Testing Site</title>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/script.js"></script>
+    <script src="./move.js"></script>
+    <script>
+    	let counter;
+    	function repUp() {
+    	    stop();
+    	    counter = setInterval(function() {
+    	        up();
+    	    }, 32);
+    	}
+    	function repDown() {
+    	    stop();
+    	    counter = setInterval(function() {
+    	        down();
+    	    }, 32);
+    	}
+    	function repLeft() {
+    	    stop();
+    	    counter = setInterval(function() {
+    	        left();
+    	    }, 32);
+    	}
+    	function repRight() {
+    	    stop();
+    	    counter = setInterval(function() {
+    	        right();
+    	    }, 32);
+    	}
+    	function stop() {
+    	    if (counter != null)
+    	        clearInterval(counter);
+    	}
+    </script>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./move.css">
+</head>
+<body class="darkTheme" id="body">
+    <div class="container">
+        <div class="row">
+            <header class="d-flex justify-content-center py-3">
+            <ul class="nav">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/games/" class="nav-link active" aria-current="page">Games</a></li>
+                <li class="nav-item"><a href="/other" class="nav-link">Other</a></li>
+            </ul>
+            </header>
+        </div>
+        <div class="row black-text">
+            <div class="col-md-2"></div>
+            <div class="col-xs-12 col-md-8">
+                <canvas id="move" width=400 height=400 style="border:1px solid #000000;"></canvas>
+                <form action="#" onsubmit="rename(document.getElementById('name').value);return false">
+                    <label for="name">Username:</label>
+                    <input type="text" id="name" name="name" value="anonymous">
+                    <input type="submit" value="Submit">
+                </form>
+                <button class="disable-select" type="button" ontouchstart="repUp()"    onclick="repUp()"    onmouseup="stop()" ontouchend="stop()">^</button>
+                <button class="disable-select" type="button" ontouchstart="repLeft()"  onclick="repLeft()"  onmouseup="stop()" ontouchend="stop()"><</button>
+                <button class="disable-select" type="button" ontouchstart="repRight()" onclick="repRight()" onmouseup="stop()" ontouchend="stop()">></button>
+                <button class="disable-select" type="button" ontouchstart="repDown()"  onclick="repDown()"  onmouseup="stop()" ontouchend="stop()">v</button>
+                <button class="disable-select" type="button" onclick="stop()">Stop</button>
+                <button class="disable-select" type="button" onclick="socket.emit('dash');">Dash</button>
+                <div class="color-select">
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','red')">🟥</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','blue')">🟦</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','purple')">🟪</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','brown')">🟫</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','black')">⬛</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','lightgreen')">🟩</button>
+                    <button class="color-select" type="button" onclick="socket.emit('setColor','white')">⬜</button>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
